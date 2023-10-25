@@ -1,28 +1,3 @@
-<?php
-
-$conn = mysqli_connect('localhost','root', 'contact_db', '') or die('connection failed');
-
-if(isset($_POST['submit'])){
-
-$name = mysqli_real_escape_string($conn, $_POST['name']);
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$number = $_POST['number'];
-$date = $_POST['date'];
-
-$insert = mysqli_query($conn, "INSERT INTO 'contact_form'(name, email, number, date)VALUES('$name','$email','$number','$date')") or die('query failed');
-
-if($insert){
-    $message[] = 'appointment made sucessfulyy!';
-}else{
-    $message[] = 'appointment failded';
-}
-
-}
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -298,7 +273,7 @@ if($insert){
     </div>
 
     <div class="box">
-    <i class="fas fa-map-maker-alt"></i>
+    <i class="fas fa-map-marker"></i>
     <h3>our address</h3>
     <p>mumbai, india - 400104</p>
     <p>anasbhai@gmail.com</p>
@@ -311,7 +286,14 @@ if($insert){
     <p>anasbhai@gmail.com</p>
     </div>
 
+    <div class="box">
+        <i class="fas fa-envelope-open"></i>
+        <h3>email address</h3>
+        <p>shaikhannas@gmail.com</p>
+        <p>anasbhai@gmail.com</p>
+    </div>
 
+</div>
 
 <script src="js/script.js"></script>
 </head>
